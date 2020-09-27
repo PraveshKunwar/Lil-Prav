@@ -1,0 +1,26 @@
+{
+  "name": "lil-prav",
+  "version": "1.0.0",
+  "description": "A cool discord bot with tons of features, and a database included!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PraveshKunwar/Lil-Prav.git"
+  },
+  "keywords": [
+    "Lil",
+    "Prav"
+  ],
+  "author": "PraveshK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PraveshKunwar/Lil-Prav/issues"
+  },
+  "homepage": "https://github.com/PraveshKunwar/Lil-Prav#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
