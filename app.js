@@ -1,18 +1,37 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({ disableEveryone: true });
 const config = require("./Config/config");
+const { readdir } = require("fs");
 
-bot.on("ready", () => {
-  console.log(`Logged in as ${bot.user.tag}`);
-  bot.user
-    .setPresence({
-      activity: {
-        name: "To my owners instructions!",
-        type: "LISTENING",
-      },
-      status: "dnd",
-    })
-    .catch(console.error());
+bot.commands = new Discord.Collection();
+
+//cmd handler
+readdir("./Commands", (err, files) => {
+  if (err) console.error(err);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) {
+      return;
+    } else {
+      let props = require(`./Commands/${file}`);
+      let cmdName = file.split(".")[0];
+      console.log(`Loaded ${cmdName}!`);
+      bot.commands.set(cmdName, props);
+    }
+  });
+});
+
+//evt handler
+readdir("./Events", (err, files) => {
+  if (err) console.error(err);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) {
+      return;
+    } else {
+      let props = require(`./Events/${file}`);
+      let evtName = file.split(".")[0];
+      bot.on(evtName, props.bind(null, bot));
+    }
+  });
 });
 
 bot.login(config.token);
