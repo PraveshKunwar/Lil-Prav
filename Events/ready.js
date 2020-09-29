@@ -1,7 +1,7 @@
 const { GridFSBucket } = require("mongodb");
 
 module.exports = (bot) => {
-  const MongoClient = require("mongodb").MongoClient;
+  /* const MongoClient = require("mongodb").MongoClient;
   const { url } = require("../Config/config");
   MongoClient.connect(
     url,
@@ -12,7 +12,7 @@ module.exports = (bot) => {
       }
       console.log(`Connected to Database.`);
     }
-  );
+  );*/
   console.log(`Logged in as ${bot.user.tag}`);
   bot.user
     .setPresence({

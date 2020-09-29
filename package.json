@@ -22,7 +22,9 @@
   "homepage": "https://github.com/PraveshKunwar/Lil-Prav#readme",
   "dependencies": {
     "discord.js": "^12.3.1",
+    "mathjs": "^7.3.0",
     "mongodb": "^3.6.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
   }
 }

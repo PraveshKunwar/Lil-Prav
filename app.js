@@ -6,13 +6,27 @@ const { readdir } = require("fs");
 bot.commands = new Discord.Collection();
 
 //cmd handler
-readdir("./Commands", (err, files) => {
+readdir("./Commands/Moderation", (err, files) => {
   if (err) console.error(err);
   files.forEach((file) => {
     if (!file.endsWith(".js")) {
       return;
     } else {
-      let props = require(`./Commands/${file}`);
+      let props = require(`./Commands/Moderation/${file}`);
+      let cmdName = file.split(".")[0];
+      console.log(`Loaded ${cmdName}!`);
+      bot.commands.set(cmdName, props);
+    }
+  });
+});
+
+readdir("./Commands/Misc", (err, files) => {
+  if (err) console.error(err);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) {
+      return;
+    } else {
+      let props = require(`./Commands/Misc/${file}`);
       let cmdName = file.split(".")[0];
       console.log(`Loaded ${cmdName}!`);
       bot.commands.set(cmdName, props);
