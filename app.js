@@ -48,4 +48,5 @@ readdir("./Events", (err, files) => {
   });
 });
 
+if(!config.token) return console.log("No token to log in with.");
 bot.login(config.token);
