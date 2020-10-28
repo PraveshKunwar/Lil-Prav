@@ -4,7 +4,8 @@
   "description": "A cool discord bot with tons of features, and a database included!",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "mathjs": "^7.3.0",
     "mongodb": "^3.6.2",
     "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.4"
   }
 }
